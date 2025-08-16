@@ -12,30 +12,24 @@ import { toast } from "react-toastify";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef();
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   setIsSubmitting(true);
-  //   setTimeout(() => {
-  //     toast.success("Thank you for your message. I'll get back to you soon.");
-  //     setIsSubmitting(false);
-  //   }, 1500);
-  // };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setIsSubmitting(true);
 
-
-
     emailjs
-      .sendForm("service_8fo8q5i", "template_tb6mt3v", form.current, {
-        publicKey: "0CfaUqndQWWaidpyz",
-      })
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           toast.success(
@@ -157,7 +151,7 @@ const ContactSection = () => {
           </div>{" "}
           <div className="bg-card p-8 rounded-lg shadow-xs">
             {" "}
-            <h3 className="text-2xt font-semibold mb-6">Send a Message</h3>{" "}
+            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>{" "}
             <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               {" "}
               <div>
