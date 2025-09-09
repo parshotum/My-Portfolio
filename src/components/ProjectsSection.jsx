@@ -18,8 +18,25 @@ const projects = [
       "Stripe",
       "Razorpay",
     ],
-    url: "#",
-    githubUrl: "#",
+    url: "https://clothing-ecommerce-mern-stackuser.vercel.app/",
+    githubUrl: "https://github.com/parshotum/clothing-ecommerce-mern-stack",
+  },
+  {
+    id: 2,
+    title: "Food Delivery Website",
+    description:
+      "A modern MERN food delivery web app with user authentication, cart management, and Stripe payments. Features include order tracking, admin panel for managing menu and orders, and a responsive design for desktop and mobile.",
+    image: "/projects/project2.png",
+    tags: [
+      "React",
+      "NodeJs",
+      "Express",
+      "MongoDB",
+      "Cloudinary",
+      "Stripe",
+    ],
+    url: "https://food-delivery-website-one-drab.vercel.app/",
+    githubUrl: "https://github.com/parshotum/Food-Delivery-Website",
   },
 ];
 
@@ -51,8 +68,11 @@ const ProjectsSection = () => {
               </div>
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag , key) => (
-                    <span key={key} className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag, key) => (
+                    <span
+                      key={key}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -85,7 +105,7 @@ const ProjectsSection = () => {
         <div className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            href="https://github.com/Pashulohana"
+            href="https://github.com/parshotum"
             target="_blank"
           >
             Check My Github <ArrowRight size={16} />
